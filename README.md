@@ -17,7 +17,7 @@ Create your Line art in your vector editor of choice
 Export as .SVG (Default export options are fine)
 Convert SVG file to text file. e.g - You can rename like "test.svg.txt".
 
-![Screenshot](screen2.png)
+![Screenshot](screen2.jpg)
 
 ## SetUp
 Copy `Assets/SVGPainterUnity` directory to your Assets directory.
@@ -39,10 +39,6 @@ svgPainter.Play (3f, PainterEasing.EaseInOutCubic);
 
 ## Compatibility
 SVGLinePainter is only tested on MacOS with OpenGLCore and not sure about another platform.
-
-## Todo
-Test on iOS and Android.
-Optimization.
 
 ## License
 MIT
