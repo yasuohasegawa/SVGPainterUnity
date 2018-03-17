@@ -14,14 +14,14 @@ Create your Line art in your vector editor of choice
 - No closed paths. i.e - Line needs a start and end.
 - Crop Artboard nice & tight!
 - If you draw simple circle, you need to add anchor point. Othewise library will not draw circle.
-Export as .SVG (Default export options are fine)
-Convert SVG file to text file. e.g - You can rename like "test.svg.txt".
+Export as .SVG (Default export options are fine)<br>
+Convert SVG file to text file. e.g - You can rename like "test.svg.txt".<br>
 
 ![Screenshot](screen2.jpg)
 
 ## SetUp
-Copy `Assets/SVGPainterUnity` directory to your Assets directory.
-Add a `SVGPainter` component to a GameObject.
+Copy `Assets/SVGPainterUnity` directory to your Assets directory.<br>
+Add a `SVGPainter` component to a GameObject.<br>
 Add your SVG text file to `Resources/` directory.
 
 ![Screenshot](screen1.png)
