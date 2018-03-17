@@ -9,9 +9,9 @@ public class Example : MonoBehaviour {
 	void Start () {
 		var svgPainter = GetComponent<SVGPainter> ();
 		svgPainter.Init ("test.svg");
-		//svgPainter.Play (3f, PainterEasing.EaseInOutCubic);
+		svgPainter.Play (3f, PainterEasing.EaseInOutCubic);
 
-
+		/* // if you want to try rewind animation, here it is.
 		svgPainter.Play (3f, PainterEasing.EaseInOutCubic, () => {
 			
 			Debug.Log("Complete");
@@ -20,7 +20,7 @@ public class Example : MonoBehaviour {
 				Debug.Log("Rewind Complete");
 			});
 		});
-
+		*/
 	}
 	
 	// Update is called once per frame
