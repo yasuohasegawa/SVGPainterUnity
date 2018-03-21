@@ -26,7 +26,7 @@ Add your SVG text file to `Resources/` directory.
 
 ![Screenshot](screen1.png)
 
-## Example
+## Example Code
 ![Screenshot](anim.gif)
 
 Here is how to animate.
@@ -35,6 +35,33 @@ Here is how to animate.
 var svgPainter = GetComponent<SVGPainter> ();
 svgPainter.Init ("test.svg");
 svgPainter.Play (3f, PainterEasing.EaseInOutCubic);
+```
+
+If you want to rewind animation, here it is.
+
+```C#
+svgPainter.Play (3f, PainterEasing.EaseInOutCubic, () => {
+	svgPainter.Rewind (3f, PainterEasing.EaseInOutCubic);
+});
+```
+
+Setup line width and color.
+
+```C#
+svgPainter.Init ("test.svg",0.002f,new Color (1f, 1f, 1f));
+```
+
+## Canvas Example Code
+
+```C#
+var svgPainter = GetComponent<SVGPainter> ();
+svgPainter.InitCanvas ("test.svg");
+svgPainter.Play (3f, PainterEasing.EaseInOutCubic);
+```
+
+Setup line width and color.
+```C#
+svgPainter.InitCanvas ("test.svg",1f,new Color (1f, 1f, 1f));
 ```
 
 ## Compatibility

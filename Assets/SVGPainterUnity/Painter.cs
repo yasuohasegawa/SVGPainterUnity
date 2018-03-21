@@ -12,7 +12,7 @@ namespace SVGPainterUnity{
 
 	public class Painter : MonoBehaviour {
 		public List<Vector3> originalPoints = new List<Vector3> ();
-		public LineRenderer line;
+		public Material lineMat;
 		public int sMaskValueID;
 		public System.Func<float, float, float, float, float> easing = null;
 
@@ -86,7 +86,7 @@ namespace SVGPainterUnity{
 		}
 
 		public void SetMaskValue(float val) {
-			line.material.SetFloat (sMaskValueID, val);
+			lineMat.SetFloat (sMaskValueID, val);
 		}
 
 		public PainterAnimationState GetState() {
