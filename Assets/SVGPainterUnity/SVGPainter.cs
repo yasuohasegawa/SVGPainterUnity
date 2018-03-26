@@ -137,7 +137,6 @@ namespace SVGPainterUnity{
 			l.endColor = col;
 			l.material = new Material(Shader.Find("Custom/SVGLine"));
 
-			painter.originalPoints = data.points;
 			painter.lineMat = l.material;
 			painter.sMaskValueID = Shader.PropertyToID("_SVGLineMaskValue");
 			return pathObj;
@@ -171,7 +170,6 @@ namespace SVGPainterUnity{
 			Material mat = new Material(Shader.Find("Custom/SVGLine"));
 			cvs.UpdateLine(data.points,w,col,mat);
 
-			painter.originalPoints = data.points;
 			painter.lineMat = mat;
 			painter.sMaskValueID = Shader.PropertyToID("_SVGLineMaskValue");
 

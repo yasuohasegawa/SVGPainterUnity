@@ -12,12 +12,14 @@ Also SVG part of code is a port of https://github.com/colinmeinke/svg-points/blo
 Create your Line art in your vector editor of choice
 - Ensure there are no fills.
 - No closed paths. i.e - Line needs a start and end.
+- No compound path. If you have compound path, you need to release.
 - Crop Artboard nice & tight!
 - If you draw simple circle, you need to add anchor point. Othewise library will not draw circle.
 Export as .SVG (Default export options are fine)<br>
 Convert SVG file to text file. e.g - You can rename like "test.svg.txt".<br>
 
 ![Screenshot](screen2.jpg)
+![Screenshot](screen3.png)
 
 ## SetUp
 Copy `Assets/SVGPainterUnity` directory to your Assets directory.<br>

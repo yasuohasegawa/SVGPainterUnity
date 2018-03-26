@@ -11,7 +11,6 @@ namespace SVGPainterUnity{
 	}
 
 	public class Painter : MonoBehaviour {
-		public List<Vector3> originalPoints = new List<Vector3> ();
 		public Material lineMat;
 		public int sMaskValueID;
 		public System.Func<float, float, float, float, float> easing = null;
