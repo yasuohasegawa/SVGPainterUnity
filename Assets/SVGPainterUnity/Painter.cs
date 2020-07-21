@@ -36,7 +36,13 @@ namespace SVGPainterUnity{
 			SetUpParams (_delay, _easing);
 		}
 
-		private void SetUpParams(float _delay = 0f, System.Func<float, float, float, float, float> _easing = null) {
+        public void Stop(bool showAll = false)
+        {
+			state = PainterAnimationState.Complete;
+			SetMaskValue((showAll) ? 1f : 0f);
+		}
+
+        private void SetUpParams(float _delay = 0f, System.Func<float, float, float, float, float> _easing = null) {
 			delay = _delay;
 			easing = _easing;
 			startTime = Time.time;

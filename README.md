@@ -68,7 +68,8 @@ svgPainter.InitCanvas ("test.svg",1f,new Color (1f, 1f, 1f));
 ```
 
 ## Compatibility
-SVGLinePainter is only tested on MacOS with OpenGLCore and not sure about another platform.
+SVGLinePainter is only tested on MacOS with OpenGLCore, iOS13.4, Android10 and not sure about another platform.
+Editor:2019.4 LTS
 
 ## License
 MIT

@@ -16,6 +16,8 @@ namespace SVGPainterUnity{
 
 		private ToPoints toPoints;
 
+		private float screenZ = 3f; // Zero does not work. You need to set up this value larger than zero.
+
 		private System.Action onComplete = null;
 		private System.Action onRewindComplete = null;
 
@@ -41,9 +43,11 @@ namespace SVGPainterUnity{
 				}
 				if(checkCompleteCount>=painters.Count){
 					state = PainterState.Complete;
+
 					if (onComplete != null) {
 						onComplete ();
 						onComplete = null;
+						return;
 					}
 
 					if(onRewindComplete != null){
@@ -103,8 +107,19 @@ namespace SVGPainterUnity{
 			}
 		}
 
-		// for 3d space
-		private GameObject CreatePath(string path, float w, Color col, float width, float height) {
+        public void Stop(bool showAll = false)
+        {
+			state = PainterState.Complete;
+			onComplete = null;
+			onRewindComplete = null;
+			for (int i = 0; i < painters.Count; i++)
+			{
+				painters[i].Stop(showAll);
+			}
+		}
+
+        // for 3d space
+        private GameObject CreatePath(string path, float w, Color col, float width, float height) {
 			GameObject pathObj = new GameObject ("path");
 			pathObj.transform.parent = gameObject.transform;
 			pathObj.transform.localPosition = Vector3.zero;
@@ -120,8 +135,8 @@ namespace SVGPainterUnity{
 
 			Camera c = Camera.main;
 			for (int i = 0; i < data.points.Count; i++) {
-				Vector3 p = c.ScreenToWorldPoint (new Vector3 (data.points [i].x+((Screen.width-width)*0.5f), data.points [i].y+((Screen.height-height)*0.5f), c.nearClipPlane));
-				p.y -= c.transform.localPosition.y*2f;
+				Vector3 p = c.ScreenToWorldPoint (new Vector3 (data.points [i].x+((Screen.width-width)*0.5f), data.points [i].y+((Screen.height-height)*0.5f), screenZ));
+				//p.y -= c.transform.position.y*4f;
 
 				p = m.MultiplyPoint3x4(p);
 				p.z = 0f;
